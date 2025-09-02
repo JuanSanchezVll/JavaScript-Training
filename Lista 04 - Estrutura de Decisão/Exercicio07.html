@@ -48,7 +48,7 @@ d) Se o valor calculado acima for maior que 30%, exiba também a mensagem abai
         var calculo1 = (prestacao / renda) * 100;
 
 
-        div_msg.innerHTML = `A prestação corresponde a ${calculo1}% da renda familiar`
+        div_msg.innerHTML = `A prestação corresponde a ${calculo1.toFixed(1)}% da renda familiar`
 
         if (calculo1 > 30) {
             div_msg.innerHTML += `<br><br><b style="color: red;">Será necessário complementar a renda familiar </b>`

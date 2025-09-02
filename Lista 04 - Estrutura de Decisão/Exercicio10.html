@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    informar a última série (SITCOM) que ele assistiu:
+    <input type="text" id="input_serie">
+    <br><br>
+    total de episódios que você já assistiu da série:
+    <input type="text" id="input_episodios">
+    <br><br>
+    <button onclick="verificar()">Verificar nível</button>
+    <br><br>
+    <div id="div_msg"></div>
+
+</body>
+
+</html>
+<script>
+    function verificar() {
+
+        var serie = input_serie.value;
+        var episodios = Number(input_episodios.value);
+
+        var tempo_total = episodios * 22;
+        var horas = tempo_total / 60;
+
+        var mensagem = "";
+
+        if (horas > 30) {
+            mensagem = `Vejo que você gosta da série ${serie} <br><br>Uau, você realmente gosta dessa série!`
+        } else {
+            mensagem = `Vejo que você gosta da série ${serie}`
+        }
+
+        div_msg.innerHTML = mensagem
+
+    }
+</script>

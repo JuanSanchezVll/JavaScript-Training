@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    Insira um numero:
+    <input type="text" id="input_numero">
+    <br><br>
+    Insira os amigos:
+    <input type="text" id="input_amigo">
+    <br><br>
+    <button onclick="calcular()">Rola a pizza?</button>
+    <br><br>
+    <div id="div_msg"></div>
+</body>
+
+</html>
+<script>
+    function calcular() {
+
+        var numero = input_numero.value;
+        var amigo = input_amigo.value;
+        var divisão = numero / amigo;
+
+        div_msg.innerHTML = `Cada amigo vai pagar R$${divisão} pela pizza`
+
+        if (divisão > 20) {
+            div_msg.innerHTML += `<br><br>Deu ruim! Pizza muito cara!`
+        }
+
+
+    }
+</script>
