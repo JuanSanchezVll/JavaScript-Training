@@ -1,0 +1,78 @@
+<!-- 
+17. Par ou Impar
+
+Crie um programa no qual receba um número e quando o usuário clicar no botão “Analisar” emita uma das mensagens abaixo:
+
+Se o número for par, emitir na cor vermelha com fundo amarelo “Esse número é PAR”
+
+Se o número for impar, emitir cor azul e em negrito “Esse número é impar” 
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>17. Par ou Impar</title>
+</head>
+
+<body>
+    <h1>17. Par ou Impar</h1>
+
+    Insira um numero:
+    <input type="text" id="input_numero">
+    <br><br>
+    <button onclick="analisar()">Analisar</button>
+    <br><br>
+    <div id="div_msg"></div>
+
+</body>
+
+</html>
+<script>
+    function analisar() {
+        var numero = Number(input_numero.value);
+        var mensagem = "";
+
+        // 1. Verifica se é positivo
+        if (numero <= 0) {
+            mensagem = `Digite apenas números positivos maiores que 0`;
+
+        } else {
+            // 2. Verifica se é inteiro usando % 1
+            if (numero % 1 != 0) {
+                mensagem = `Digite apenas números inteiros (sem decimais)`;
+
+            } else {
+                // 3. Verifica par ou ímpar
+                var resto = numero % 2;
+
+                if (resto == 0) {
+                    mensagem = ` <span style="background-color: yellow; color: red;">Esse número ${numero} é PAR</span>`;
+                } else {
+                    mensagem = `<b style="color: blue;">Esse número ${numero} é IMPAR</b>`;
+                }
+            }
+
+        }
+
+        div_msg.innerHTML = mensagem;
+
+    }
+
+    // -> FILTRO DECIMAL
+    // Qualquer número inteiro % por 1 tem resto 0
+    // Qualquer número decimal % por 1 tem resto diferente de 0
+    // % 1 pega a parte decimal do número.
+    // Se resto != 0, significa que existe decimal → não é inteiro.
+    // Se resto == 0, significa que não tem decimal → é inteiro.
+
+    // -> FILTRO RESTO
+    // Se o resto = 0, significa que o número é divisível por 2 → PAR
+    // Se o resto ≠ 0, significa que o número não é divisível por 2 → ÍMPAR
+    // % 2 → resto da divisão por 2
+    // resto == 0 → número é par
+    // resto != 0 → número é ímpar
+
+</script>

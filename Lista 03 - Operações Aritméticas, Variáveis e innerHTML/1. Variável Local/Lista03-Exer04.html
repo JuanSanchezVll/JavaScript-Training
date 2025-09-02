@@ -1,0 +1,54 @@
+<!-- 
+4. Dividindo a Pizza
+
+Todo mundo adora pizza! Existem para todos os gostos! Crie um programa que ajude um grupo de amigos a saber quanto uma pizza vai custar para cada amigo.  
+
+a) Solicite o valor da pizza e a quantidade de amigos que vão dividir o valor.  
+
+b) Ao clicar num botão "#lovePizza", exiba uma mensagem com a frase  
+
+     "Cada um dos X amigos vai pagar R$Y"  
+
+Onde X é a quantidade de amigos e Y é o resultado do cálculo que seu programa fará  
+
+-->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dividindo a Pizza</title>
+</head>
+<body>
+    <h1>Dividindo a Pizza</h1>
+
+    Insira o valor da pizza:
+    <input type="text" id="input_valor">
+    <br>
+    Insira a quantidade de amigos:
+    <input type="text" id="input_amigos">
+    <br><br>
+    <button onclick="exibir()">#lovePizza</button>
+    <br><br>
+    <div id="div_msg"></div>
+
+
+</body>
+</html>
+<script>
+    function exibir() {
+
+        // utlizando o tofixed(2) -> arredonda para 2 casa decimais
+        // se for > = 5 acrescenta 1
+        // se for < 5 mantém
+
+       var valor = Number(input_valor.value);
+       var amigos = Number(input_amigos.value);
+       var resultado = valor / amigos; 
+
+       div_msg.innerHTML = `Cada um dos ${amigos} amigos vai pagar R$${resultado.toFixed(2)}`;
+    }
+
+</script>

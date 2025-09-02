@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <h1>19. Mercado BOM DOCE</h1>
+
+    Solicite a quantidade de chocolates comprados:
+    <input type="text" id="input_chocolate">
+    <br><br>
+    <button onclick="comprar ()">Compra</button>
+    <br><br>
+    <div id="div_msg"></div>
+
+
+</body>
+
+</html>
+<script>
+    function comprar() {
+
+        var chocolate = input_chocolate.value;
+
+        if (chocolate > 12) {
+            preco = chocolate * 2.50;
+            div_msg.innerHTML = `O valor da sua compra foi de ${preco}.  `
+        } else {
+            preco = chocolate * 3;
+            div_msg.innerHTML = `O valor da sua compra foi de ${preco}.  `
+
+        }
+
+
+    }
+</script>

@@ -1,0 +1,93 @@
+<!-- 
+3. Controle Financeiro Mensal de uma empresa
+
+Crie um programa que:  
+
+a) Solicite o valor recebido com a venda de peças
+
+b) Solicite o valor recebido com a venda de serviços
+
+c) Solicite o percentual de imposto sobre os valores recebidos
+
+d) Solicite o valor dos gastos realizados no mês 
+
+e) Tenha o botões “Acumular” que quando clicado emite a mensagem abaixo:
+
+Resumo do mês XX, Total recebido = R$ aaaaa,aa – Valor do Imposto = R$ bbbb,bb – Saldo Final de R$ cccc,cc – Acumulado até o Momento = R$ dddd,dd
+
+OBS1:
+
+  XX é a sequência dos meses, 1, 2, e assim por diante
+
+  aaa,aa é a soma dos dois valores recebidos (item a e item b)
+
+  bbb,bb é o percentual de imposto (item c) aplicado em aaa,aa
+
+  ccc,cc é o valor de aaa,aa subtraído dos gastos (item d) e do imposto (bbb,bb)
+
+OBS2: ao exibir a mensagem não apagar as mensagens anteriores 
+
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Controle Financeiro Mensal de uma empresa</title>
+</head>
+
+<body>
+  <h1> Controle Financeiro Mensal de uma empresa</h1>
+
+  Insira o valor recebido com a venda de peças:
+  <input type="text" id="inptut_pecas">
+  <br>
+  Insira o valor recebido com a venda de serviços:
+  <input type="text" id="input_servicos">
+  <br>
+  Insira o percentual de imposto sobre os valores recebidos:
+  <input type="text" id="input_imposto">
+  <br>
+  Insira o valor dos gastos realizados no mês:
+  <input type="text" id="input_gastos">
+  <br><br>
+  <button onclick="acumular()">Acumular</button>
+  <br><br>
+  <div id="div_msg"></div>
+
+</body>
+
+</html>
+<script>
+
+  var mes = 0;
+  var acumulo = 0;
+
+  function acumular() {
+
+    var pecas = Number(inptut_pecas.value);
+    var servicos = Number(input_servicos.value);
+    var imposto = Number(input_imposto.value);
+    var gastos = Number(input_gastos.value);
+
+    var recebimento = 0;
+
+    var valorImposto = 0;
+
+    var liquido = 0;
+
+    mes = mes + 1;
+    recebimento = pecas + servicos
+    valorImposto = recebimento * (imposto / 100)
+    liquido = recebimento - valorImposto - gastos
+
+    acumulo = acumulo + liquido; 
+
+    div_msg.innerHTML += `<br><br>Resumo do mês ${mes}, Total recebido = R$${recebimento} – Valor do Imposto = R${valorImposto.toFixed(1)} Saldo Final de R$${liquido} – Acumulado até o Momento = R$${acumulo}`
+
+
+
+  }
+</script>

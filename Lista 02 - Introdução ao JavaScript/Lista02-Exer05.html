@@ -1,0 +1,45 @@
+<!-- 5. Opinião da mãe e da avó 
+Crie um programa que:
+
+✅ Tenha um campo para inserir a sua nota na escola
+✅ Tenha um botão "opinião da avó"
+✅ Tenha um botão "opinião da mãe"
+✅ Ao clicar num botão "opinião da avó", abaixo dos botões, exibir "Muito bem, que neto inteligente, porque tirou X".
+✅ Ao clicar num botão "opinião da mãe", abaixo dos botões, exibir "Não fez mais que tua obrigação com essa nota X".
+         (Onde X é a nota que ele digitou.) -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Opinião</title>
+</head>
+
+<body>
+    <h1>Opinião da mãe e da avó </h1>
+
+    Insira sua nota:
+    <input type="text" id="input_nota">
+    <br><br>
+    Opinião da avó:
+    <button onclick="avo()">Opinião da avó</button>
+    <br><br>
+    Opinião da mãe:
+     <button onclick="mae()">Opinião da mãe</button>
+     <br><br>
+     <div id="div_mensagem"></div>
+     
+</body>
+</html>
+<script>
+    function avo() {
+        div_mensagem.innerHTML = " Muito bem, que neto inteligente, porque tirou " + input_nota.value
+    }
+
+    function mae() {
+        div_mensagem.innerHTML = " Não fez mais que tua obrigação com essa nota " + input_nota.value
+    }
+
+</script>

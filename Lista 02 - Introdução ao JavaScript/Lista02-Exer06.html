@@ -1,0 +1,41 @@
+<!-- 6. Farol 
+Crie um programa que:
+
+✅ Tenha três botões: "Pare", "Pense" e "Siga".
+✅ Ao clicar no 1º botão, aparece abaixo dos botões a frase: "Pare e aguarde!". 
+✅ Ao clicar no 2º botão, aparece abaixo dos botões a frase: "Pense se pode seguir ou se deve parar!". 
+✅ Ao clicar no 3º botão, aparece abaixo dos botões a frase: "Pode seguir adiante". -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Farol</title>
+</head>
+<body>
+    <h1>Farol</h1>
+
+    <button onclick="pare()">Pare</button>
+    <br><br>
+    <button onclick="pense()">Pense</button>
+    <br><br>
+    <button onclick="siga()">Siga</button>
+    <br><br>
+    <div id="div_mensagem"></div>
+
+</body>
+</html>
+<script>
+    function pare() {
+        div_mensagem.innerHTML = "Pare e aguarde!"
+    }
+
+    function pense() {
+        div_mensagem.innerHTML = "Pense se pode seguir ou se deve parar!"
+    }
+
+    function siga() {
+         div_mensagem.innerHTML = "Pode seguir adiante" 
+    }
+</script>

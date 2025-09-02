@@ -1,0 +1,78 @@
+<!-- 
+3. Fazendo divisão
+
+Faça uma calculadora que sabe somente fazer a operação de divisão, assim:
+
+a) Receba dois números
+
+b) Tenha o botão "Quociente" que quando clicado emitirá a mensagem "A divisão de N1 por N2 é: XXX", sendo que N1 é o primeiro número recebido, N2 é o segundo e XXX é o quociente da divisão.
+
+b) Tenha o botão "Resto" que quando clicado emitirá a mensagem "O resto da divisão de N1 por N2 é: XXX", sendo que N1 é o primeiro número recebido, N2 é o segundo e XXX é o resto da divisão.
+
+c) Tenha o botão "Completo" que quando clicado emitirá a mensagem "A divisão de N1 por N2 é: XXX e o resto dessa divisão é: YYY", sendo que N1 é o primeiro número recebido, N2 é o segundo, XXX é o quociente da divisão e YYY é o resto dessa divisão. 
+-->
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Divisão</title>
+</head>
+
+<body>
+
+    Insira o primeiro número:
+    <input type="text" id="input_primeiro">
+    <br>
+    Insira o segundo número:
+    <input type="text" id="input_segundo">
+    <br><br>
+    <button onclick="quociente()">Quociente</button>
+    <br>
+    <button onclick="resto()">Resto</button>
+    <br>
+    <button onclick="completo()">Completo</button>
+    <br><br>
+    <div id="div_mensagem"></div>
+
+</body>
+
+</html>
+<script>
+    function quociente() {
+        var primeiro = Number(input_primeiro.value);
+        var segundo = Number(input_segundo.value);
+        var resultado = primeiro / segundo;
+
+        div_mensagem.innerHTML = `A divisão de ${primeiro} por ${segundo} é: ${resultado}`
+    }
+
+    function resto() {
+        // “Quantas vezes o divisor (5) cabe dentro do dividendo (17) sem ultrapassar?”
+        // O 5 cabe 3 vezes dentro do 17, porque 3 × 5 = 15.
+        // Depois que você tira 15 do 17, sobra 2.
+        // Esse “que sobra” é o resto.
+
+        var dividendo = Number(input_primeiro.value);
+        var divisor = Number(input_segundo.value);
+        // var resultado = primeiro * segundo % resultado 
+
+        var resultado = dividendo % divisor;
+
+        div_mensagem.innerHTML = `O resto da divisão de ${dividendo} por ${divisor} é: ${resultado}`
+    }
+
+    function completo() {
+        var primeiro = Number(input_primeiro.value);
+        var segundo = Number(input_segundo.value);
+        var divisão = primeiro / segundo;
+        var resto = primeiro % segundo;
+
+        div_mensagem.innerHTML = `A divisão de ${primeiro} por ${segundo} é: ${divisão} e o resto dessa divisão é: ${resto}`
+
+    }
+
+</script>

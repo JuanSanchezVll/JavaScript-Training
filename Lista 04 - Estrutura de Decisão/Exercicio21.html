@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Análise de frequência do aluno</title>
+</head>
+
+<body>
+
+    <h1>21. Análise de frequência do aluno</h1>
+
+    Solicita a frequência do aluno:
+    <input type="text" id="input_frequencia">
+    <br><br>
+    <button onclick="analisar()">Analisar frequência</button>
+    <br><br>
+    <div id="div_msg"></div>
+
+</body>
+
+</html>
+<script>
+    function analisar() {
+
+        var frequencia = Number(input_frequencia.value);
+
+        if (frequencia >= 50) {
+            div_msg.innerHTML = `<img src="https://blog.ulbra.br/wp-content/uploads/2024/09/como-e-a-vida-de-um-estudante-de-direito-confira.png" alt="Aluno Estudioso">`
+
+        } else {
+            div_msg.innerHTML = `<img src="https://thumbs.dreamstime.com/z/turista-novo-perdido-com-sua-bagagem-em-uma-praia-48026025.jpg" alt="Turista">`
+        }
+
+    }
+
+</script>

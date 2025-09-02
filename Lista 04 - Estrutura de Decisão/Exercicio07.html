@@ -1,0 +1,63 @@
+<!-- 
+7. Financiamento da Casa própria 
+
+Crie um programa que auxilie um banco a identificar quem tem renda o suficiente para fazer o financiamento da casa própria.  
+
+a) Solicite o valor da renda familiar 
+
+b) Solicite o valor da prestação 
+
+c) Ao clicar em "Verificar financiamento", exiba na página a mensagem "A prestação corresponde a XX% da renda familiar" (divida a prestação pela renda e multiplique por 100) 
+
+d) Se o valor calculado acima for maior que 30%, exiba também a mensagem abaixo em negrito e em vermelho: 
+
+    "Será necessário complementar a renda familiar"   
+ 
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Financiamento da Casa própria </title>
+</head>
+
+<body>
+    <h1>Financiamento da Casa própria </h1>
+
+    Informe o valor da renda familiar:
+    <input type="text" id="input_renda">
+    <br>
+    Informe o valor da prestação:
+    <input type="text" id="input_prestacao">
+    <br><br>
+    <button onclick="verificar()">Verificar financiamento</button>
+    <br><br>
+    <div id="div_msg"></div>
+    <b style="color: red;"></b>
+
+</body>
+
+</html>
+<script>
+    function verificar() {
+
+        var renda = Number(input_renda.value);
+        var prestacao = Number(input_prestacao.value);
+        var calculo1 = (prestacao / renda) * 100;
+
+
+        div_msg.innerHTML = `A prestação corresponde a ${calculo1}% da renda familiar`
+
+        if (calculo1 > 30) {
+            div_msg.innerHTML += `<br><br><b style="color: red;">Será necessário complementar a renda familiar </b>`
+
+
+
+
+
+        }
+
+    }
+</script>

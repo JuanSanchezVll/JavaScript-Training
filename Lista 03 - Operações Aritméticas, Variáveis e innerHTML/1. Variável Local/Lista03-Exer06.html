@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nota da Atividade Avaliativa</title>
+</head>
+
+<body>
+    <h1>Nota da Atividade Avaliativa</h1>
+
+    Insira seu nome:
+    <input type="text" id="input_nome">
+    <br><br>
+    Ativ. Avaliativa 1:
+    <input type="text" id="input_1">
+    <br>
+    Ativ. Avaliativa 2:
+    <input type="text" id="input_2">
+    <br>
+    Ativ. Avaliativa 3:
+    <input type="text" id="input_3">
+    <br><br>
+    <button onclick="mostrar()">Mostrar Nota</button>
+    <br>
+    <div id="div_msg"></div>
+</body>
+
+</html>
+<script>
+    function mostrar() {
+
+        var nome = input_nome.value;
+        var n1 = Number(input_1.value);
+        var n2 = Number(input_2.value);
+        var n3 = Number(input_3.value);
+
+        div_msg.innerHTML = `A soma das suas três atividades é: 9999 <br><br>
+
+        XXXX, a média das suas atividades é: 9999,9999`
+
+    }
+</script>

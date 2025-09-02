@@ -1,0 +1,70 @@
+<!-- 
+8. Fases do sono 
+
+Crie um programa que ajude a calcular o tempo de cada fase do sono do ser humano.  
+
+Sabendo que nosso sono possui fases como descreve a figura abaixo:  
+
+Vamos considerar que as fases do sono possuem a porcentagens de tempo descritas na figura.  
+
+
+a) Solicite ao usuário quantas horas de sono ele dormiu  
+
+b) Ao clicar no botão "Calcular Sono", faça os cálculos necessários para exibir o seguinte conteúdo na tela:  
+
+    Ao dormir X horas, você dormiu:  
+
+    A horas na fase 1  
+
+    B horas na fase 2  
+
+    C horas na fase 3  
+
+    D horas na fase REM  
+
+
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fases do sono </title>
+</head>
+<body>
+    <h1>As fases do sono</h1>
+
+    Insira a quantidade de horas dormidas:
+    <input type="text" id="inptut_sono">
+    <br><br>
+    <button onclick="calcular()">Calcular Sono</button>
+    <br><br>
+    <div id="div_msg"></div>
+
+</body>
+</html>
+<script>
+    function calcular() {
+
+        var horas_dormidas = Number(inptut_sono.value);
+        var fase1 = horas_dormidas * 0.05;
+        var fase2 = horas_dormidas * 0.45;
+        var fase3 = horas_dormidas * 0.30;
+        var faseRem = horas_dormidas * 0.20;
+
+
+        div_msg.innerHTML = "Ao dormir " +  horas_dormidas + " horas, você dormiu: <br><br> " + 
+
+        fase1.toFixed(2) + " horas na fase 1 <br>" +
+
+        fase2.toFixed(2) + " horas na fase 2 <br>" +
+
+        fase3.toFixed(2) + " horas na fase 3 <br>" +
+
+        faseRem.toFixed(2) + " horas na fase REM <br>" 
+
+
+
+    }
+</script>
