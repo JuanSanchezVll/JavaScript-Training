@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <h2>10 Limite de Velocidade.</h2>
+
+    velocidade que ele estava dirigindo (km/h):
+    <input type="text" id="input_velocidade"><br><br>
+    limite de velocidade da via (km/h):
+    <input type="text" id="input_limite"><br><br>
+    <button onclick="verificar()">Verificar</button><br><br>
+    <div id="div_msg"></div>
+
+</body>
+
+</html>
+<script>
+    function verificar() {
+
+        var velocidade = Number(input_velocidade.value);
+        var limite = Number(input_limite.value);
+        // var calculo20 = velocidade * 0.20
+
+        if (velocidade <= limite) {
+            div_msg.innerHTML = `Sua velocidade é ${velocidade}, Velocidade dentro do limite. Boa direção!`
+        } else if (velocidade <= limite * 1.20) {
+            div_msg.innerHTML = `Sua velocidade é ${velocidade}, Atenção! Excedendo o limite permitido.`
+        } else if (velocidade > limite * 1.20) {
+            div_msg.innerHTML = `Sua velocidade é ${velocidade}, Multa grave! Velocidade muito acima do permitido.`
+        }
+
+    }
+
+</script>

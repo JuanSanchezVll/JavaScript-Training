@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <h2>13. Imagem do Pokémon selecionado </h2>
+
+    Escolha um pokemon(Bulbasaur, Charmander ou Squirtle):
+    <input type="text" id="input_pokemon"><br><br>
+    <button onclick="escolher()">Escolher Pokémon</button><br><br>
+    <div id="div_msg"></div>
+
+
+    <img src="" alt="">
+
+
+
+</body>
+
+</html>
+<script>
+    function escolher() {
+
+        var pokemon = input_pokemon.value
+
+        if (pokemon == 'Bulbasaur') {
+            div_msg.innerHTML = `<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTLGymturVMHVRc-9kAhaYpju2MmPGm1eI_qw&s" height="500px" alt="Bulbasaur">`
+        } else if (pokemon == 'Charmander') {
+            div_msg.innerHTML = `<img src="https://images.ladbible.com/resize?type=webp&quality=70&width=3840&fit=contain&gravity=auto&url=https://images.ladbiblegroup.com/v3/assets/bltbc1876152fcd9f07/blte64cd5ae85f6a2cd/682306cd54cb2f0990842105/Screenshot_2025-05-13_094502.png" height="500px" alt="Charmander">`
+        } else if (pokemon == 'Squirtle') {
+            div_msg.innerHTML = `<img src="https://i.pinimg.com/736x/97/5a/fd/975afdbe504a0d405b1324abdb37f761.jpg" height="500px" alt="Squirtle">`
+        } else {
+            div_msg.innerHTML = `Pokémon não reconhecido.`
+        }
+
+    }
+
+</script>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <h2>7. Consumo de Calorias: Sua Dieta Está Saudável?</h2>
+
+    quantos pães franceses o usuário tem comido por dia:
+    <input type="text" id="input_pao">
+    <br><br>
+    quantos pacotes de bolacha recheada o usuário tem comido por dia:
+    <input type="text" id="input_bolacha">
+    <br><br>
+    quantos copos de achocolatado o usuário tem tomado por dia:
+    <input type="text" id="input_achocolatado">
+    <br><br>
+    <button onclick="verificar()">Verificar calorias</button>
+    <br><br>
+    <div id="div_msg"></div>
+
+</body>
+
+</html>
+<script>
+    function verificar() {
+
+        var pao = Number(input_pao.value);
+        var bolacha = Number(input_bolacha.value);
+        var achocolatado = Number(input_achocolatado.value);
+
+        var calculo_pao = pao * 50;
+        var calculo_bolacha = bolacha * 80;
+        var calculo_achocolatado = achocolatado * 70;
+
+        var somaTotal = calculo_pao + calculo_bolacha + calculo_achocolatado;
+
+        if (somaTotal < 200) {
+            div_msg.innerHTML = `Voce consumiu ${somaTotal} Parabéns, vai ficar em forma!`
+        } else if (somaTotal <= 400) {
+            div_msg.innerHTML = `Voce consumiu ${somaTotal} Cuidado, vai ficar menos saudável !`
+        } else {
+            div_msg.innerHTML = `Voce consumiu ${somaTotal} Alerta crítico de saúde !!!`
+        }
+
+    }
+
+</script>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <h2>14. Representação do humor do usuário</h2>
+
+    como está se sentindo hoje (Opções: "Feliz", "Triste", "Bravo", "Surpreso", "Cansado"):
+    <input type="text" id="input_emocao"><br><br>
+    <button onclick="mostrar()">Mostrar Humor</button><br><br>
+    <div id="div_msg"></div>
+
+</body>
+
+</html>
+<script>
+    function mostrar() {
+
+        var emocao = input_emocao.value
+
+        if (emocao == 'Feliz') {
+            div_msg.innerHTML = `<img src="https://images.emojiterra.com/google/android-10/512px/1f603.png" height="500px" alt="Sorridente">`
+        } else if (emocao == 'Triste') {
+            div_msg.innerHTML = `<img src="https://images.emojiterra.com/twitter/v13.1/512px/1f62d.png" height="500px" alt="Chorando">`
+        } else if (emocao == 'Bravo') {
+            div_msg.innerHTML = `<img src="https://i.pinimg.com/474x/52/f1/d9/52f1d9df50e0d05e642b4e0e86e4838e.jpg" height="500px" alt="Irritado">`
+        } else if (emocao == 'Surpreso') {
+            div_msg.innerHTML = `<img src="https://images.emojiterra.com/google/android-11/512px/1f62f.png" height="500px" alt="Surpreso">`
+        } else if (emocao == 'Cansado') {
+            div_msg.innerHTML = `<img src="https://images.emojiterra.com/google/android-pie/512px/1f634.png" height="500px" alt="sonolento">`
+        }
+
+    }
+
+</script>
